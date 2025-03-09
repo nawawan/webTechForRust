@@ -1,0 +1,29 @@
+<!docType html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Tiny Todo</title>
+        <link rel="stylesheet" href="static/todo.css">
+    </head>
+    <body>
+        <header>
+            <h1>Tiny Todo</h1>
+        </header>
+        <main>
+            <form method="post" action="add">
+                <input type="text" name="todo" placeholder="Add a new todo" />
+                <button type="subit">Add</button>
+            </form>
+            <ul class="todo-list">
+            {% for x in todos %}
+            <li class="todo-item">
+                <div class="todo-item-left">
+                    <input type="checkbox"/>
+                    <label>{{x}}</label>
+                </div>
+            </li>
+            {% endfor %}
+            </ul>
+        </main>
+    </body>
+</html>
